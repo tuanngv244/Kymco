@@ -1,0 +1,321 @@
+.regispage{
+    .banner{
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        &__img{
+            img{
+                width: 100%;
+            }
+        }
+        &__caption{
+            @include mid();
+            &-des{
+                h1{
+                    @include text(70px,'SFU-A',auto,$white-cl,uppercase);
+                }
+                h6{
+                    margin-top: 20px;
+                    @include text(25px,'SFU-R',auto,$white-cl,none);
+                }
+            }
+        }
+    }
+    .wrapper{
+        .signIn{
+            margin: 140px 0 350px 0;
+            position: relative;
+            &__form{
+                padding: 60px 15px;
+                &-title{
+                    margin-bottom: 70px;
+                    h2{
+                        @include text($fs-main,'SFU-A',auto,$black-cl,uppercase);
+                    }
+                    h6{
+                        @include text(30px,'SFU-A',auto,$black-cl,none);
+                       padding-top: 10px; 
+                    }
+                }
+                &-detail{
+                    .col-input{
+                        padding: 0 10px;
+                        margin-bottom: 55px;
+                        input{
+                            outline: none;
+                            border: none;
+                            border-bottom: 2px solid $black-cl;
+                            background: transparent;
+                            width: 100%;
+                            @include text($fs-p,'UTM',auto,$black-cl,none);
+                        }
+                        .error{
+                            @include text($fs-small,'UTM',auto,$red-cl,none);
+                            margin-top: 10px;
+                        }
+                        .list__bike{
+                            ul{
+                                position: relative;
+                                li{
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    border: 2px solid $black-cl;
+                                    cursor: pointer;
+                                    transition: background .4s;
+
+                                    p{
+                                        padding:10px;
+                                        @include text($fs-p,'UTM',auto,$black-cl,none);
+                                    }
+                                    img{
+                                        padding: 10px;
+                                        transition: transform .4s;
+
+                                    }
+                                    &:hover{
+                                        p{
+                                            color: $black-cl;
+                                        }
+                                        border: 2px solid $red-cl;
+                                        background:$red-cl;
+                                        transition: background .3s;
+                                    }
+
+                                }
+                                .ul__list{
+                                    position: absolute;
+                                    top: 45px;
+                                    left: 0;
+                                    width: 100%;
+                                    background: $white-cl;
+                                    display: none;
+                                    li{
+                                        border: none;
+                                        border-right: 1px solid $black-cl;
+                                        border-left: 1px solid $black-cl;
+                                        border-bottom:1px solid $black-cl ;
+                                        &:hover{
+                                            border-right: 1px solid $red-cl;
+                                            border-left: 1px solid $red-cl;
+                                            border-bottom:1px solid $red-cl ;
+                                        }
+                                    }
+                                }
+                                &:hover{
+                                    .li__current{
+                                        img{
+                                            transform: rotate(-180deg);
+                                            transition: transform .3s;
+                                        }
+                                    }
+                                    .ul__list{
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }   
+                    }
+                    .btn-detail{
+                        a{
+                            font-size: 25px;
+                            padding: 15px 60px;
+                        }
+                    }
+                }
+                .img-form{
+                    max-width: 625px;
+                    max-height: 715px;
+                    
+                    padding: 0 15px;
+                    z-index: -1;
+                    img{
+                        position: relative;
+                        left: -70%;
+                    }
+                }
+            }
+            
+        }
+    }
+    
+}
+.form__modal{
+    width: 0;
+    height: 0;
+    position: fixed;
+    background: rgba($color: #000000, $alpha: .3);
+    top: -100%;
+    left: 0;
+    opacity: 0;
+    @include midflex();
+    transition: all .3s;
+
+    &-detail{
+        width: 40%;
+        height: 60%;
+        background: $white-cl;
+        position: relative;
+        .header{
+            background: $grey-cl;
+            text-align: center;
+            position: relative;
+            h6{
+                @include text($fs-p,'UTM-B',auto,$red-cl,uppercase);
+                font-weight: bold;
+                padding: 10px 0;
+            }
+            .btn__close{
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                &-detail{
+                    cursor: pointer;
+                    span{
+                        content: "";
+                        width: 20px;
+                        height: 2px;
+                        background-color: $black-cl;
+                        display: block;
+                    }
+                    .line-1{
+                        transform: rotate(45deg);
+                        top: 1px;
+                        position: relative;
+                    }
+                    .line-2{
+                        transform: rotate(-45deg);
+                        top: -1px;
+                        position: relative;
+                    }
+                }
+            }
+        }
+        .body{
+            .text-render{
+                margin-left: 10px;
+                @include text($fs-p,'SFU-R',auto,#888888,none);
+            }
+        }
+    }
+}
+.form__active{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 1;
+    transition: all .3s;
+}
+
+@include desktop{
+    .regispage{
+        .wrapper{
+            .signIn{
+                &__form{
+                    .img-form{
+                        img{
+                            left: -100%;
+
+                        }
+                    }
+                }
+            }
+        }
+   }
+   .form__modal{
+    &-detail{
+         width: 60%;
+         height: 60%;
+    }
+}
+}
+@include tablet{
+   .regispage{
+       .banner{
+           &__caption{
+               &-des{
+                   h1{
+                       font-size: 50px;
+                   }
+               }
+           }
+       }
+        .wrapper{
+            .signIn{
+                &__form{
+                    .img-form{
+                        img{
+                            left: -100%;
+
+                        }
+                    }
+                }
+            }
+        }
+   }
+   .form__modal{
+       &-detail{
+            width: 70%;
+            height: 70%;
+       }
+   }
+}
+@include mobile{
+    .regispage{
+        .banner{
+            &__caption{
+                top: 140%;
+                &-des{
+                    h1{
+                        font-size: $fs-main-res;
+                        color: $black-cl;
+                    }
+                    h6{
+                        margin-top: 10px;
+                        font-size: $fs-small-res;
+                        color: $black-cl;
+
+                    }
+                }
+            }
+        }
+        .container{
+            padding: 0 5px;
+        }
+         .wrapper{
+             .signIn{
+                 margin: 75px 0;
+                 &__form{
+                     padding: 60px 0 0 0;
+                     .img-form{
+                        display: none;
+                     }
+                     .col-input{
+                         padding: 0;
+                     }
+                     &-title{
+                         h2{
+                             font-size: $fs-main-res;
+                         }
+                         h6{
+                             font-size: $fs-small-res;
+                         }
+                     }
+                     .btn-detail{
+                         a{
+                             font-size: $fs-small;
+                             padding: 7px 30px;
+                         }
+                     }
+                 }
+             }
+         }
+    }
+    .form__modal{
+        &-detail{
+             width: 95%;
+             height: 40%;
+        }
+    }
+ }

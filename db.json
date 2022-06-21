@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "title": "LIKE",
+      "num": "50",
+      "img-main": "./img/item/product/product-item-1.jpg",
+      "img-moto": "./img/item/kymco-red.png",
+      "id": 1
+    },
+    {
+      "title": "K-PIPE",
+      "num": "125",
+      "img-main": "./img/item/product/product-item-2.jpg",
+      "img-moto": "./img/item/moto-banner-1.png",
+      "id": 2
+    },
+    {
+      "title": "CANDY",
+      "num": "50",
+      "img-main": "./img/item/product/product-item-3.jpg",
+      "img-moto": "./img/item/kymco-white.png",
+      "id": 3
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

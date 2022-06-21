@@ -1,0 +1,39 @@
+/* Core variables and mixins*/
+@import "imports/core/reset";
+@import "imports/core/variables";
+@import "imports/core/mixins";
+@import "imports/core/layouts";
+@import "imports/core/elements";
+@import "imports/core/bootstrap_mini";
+@import "imports/core/libs";
+
+@import "imports/core/loading";
+
+/* Navigation, header, footer*/
+@import "imports/core/header";
+@import "imports/core/nav";
+@import "imports/core/footer";
+
+/* Pages*/
+@import "imports/pages/_home";
+@import "imports/pages/product";
+@import "imports/pages/technology";
+@import "imports/pages/service";
+@import "imports/pages/news";
+@import "imports/pages/daily";
+@import "imports/pages/dangki";
+@import "imports/pages/contact";
+@import "imports/pages/about";
+@import "imports/pages/nextwork";
+@import "imports/pages/recuit";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+

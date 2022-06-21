@@ -1,0 +1,252 @@
+.contactpage{
+    .banner{
+        position: relative;
+        --fs-title:70px;
+        --fs-h6:25px;
+        &__img{
+            img{
+                width: 100%;
+            height: 100%;
+            }
+        }
+        &__caption{
+            @include mid();
+            &-des{
+                text-align: center;
+                h1{
+                    @include text(var(--fs-title),'SFU-A',auto,$white-cl,uppercase);
+                    letter-spacing: 1px;
+                }
+                h6{
+                    @include text(var(--fs-h6),'SFU-R',auto,$white-cl,none);
+                    padding-top: 20px;
+                }
+            }
+        }
+    }
+    .wrapper{
+        .location{
+            position: relative;
+            margin: 140px 0;
+            --lh-mid: 48px;
+            --fs-title: 45px;
+            overflow: hidden;
+            .line-black{
+                content: "";
+                width: 25%;
+                height: 5px;
+                background-color: $black-cl;
+                display: block;
+                margin-bottom: 50px;
+            }
+            .intro{
+                max-width: 600px;
+                @include text($fs-mid,'SFU-A',var(--lh-mid),$black-cl,none);
+                margin-bottom: 120px;
+            }
+            .title{
+                @include text(var(--fs-title),'SFU-A',var(--lh-mid),$black-cl,none);
+            }
+            .second{
+                height: 2px;
+                width: 46.6%;
+                margin: 35px 0;
+            }
+            h6{
+                margin: 20px;
+                @include text(30px,'SFU-A',auto,$black-cl,none);
+                a{
+                    display: inline-block;
+                }
+            }
+            .img-loca{
+                position: absolute;
+                right: 0;
+                top: -50px;
+                z-index: -1;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        .question{
+            margin: 40px 0 120px 0;
+            position: relative;
+            overflow: hidden;
+            &__form{
+                padding: 60px 15px;
+                &-title{
+                    margin-top: 60px;
+                    margin-bottom: 70px;
+                    h2{
+                        @include text($fs-main,'SFU-A',auto,$black-cl,uppercase);
+                    }
+                    h6{
+                        @include text(30px,'SFU-A',auto,$black-cl,none);
+                       padding-top: 10px; 
+                    }
+                }
+                &-detail{
+                    .col-input{
+                        padding: 0 10px;
+                        margin-bottom: 55px;
+                        input{
+                            outline: none;
+                            border: none;
+                            border-bottom: 2px solid $black-cl;
+                            background: transparent;
+                            width: 100%;
+                            @include text($fs-p,'UTM',auto,$black-cl,none);
+                        }
+                        .error{
+                            @include text($fs-small,'UTM',auto,$red-cl,none);
+                            margin-top: 10px;
+                        }
+                        .list__bike{
+                            ul{
+                                position: relative;
+                                li{
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    border: 2px solid $black-cl;
+                                    cursor: pointer;
+                                    transition: background .4s;
+
+                                    p{
+                                        padding:10px;
+                                        @include text($fs-p,'UTM',auto,$black-cl,none);
+                                    }
+                                    img{
+                                        padding: 10px;
+                                        transition: transform .4s;
+
+                                    }
+                                    &:hover{
+                                        p{
+                                            color: $black-cl;
+                                        }
+                                        border: 2px solid $red-cl;
+                                        background:$red-cl;
+                                        transition: background .3s;
+                                    }
+
+                                }
+                                .ul__list{
+                                    position: absolute;
+                                    top: 45px;
+                                    left: 0;
+                                    width: 100%;
+                                    background: $white-cl;
+                                    display: none;
+                                    li{
+                                        border: none;
+                                        border-right: 1px solid $black-cl;
+                                        border-left: 1px solid $black-cl;
+                                        border-bottom:1px solid $black-cl ;
+                                        &:hover{
+                                            border-right: 1px solid $red-cl;
+                                            border-left: 1px solid $red-cl;
+                                            border-bottom:1px solid $red-cl ;
+                                        }
+                                    }
+                                }
+                                &:hover{
+                                    .li__current{
+                                        img{
+                                            transform: rotate(-180deg);
+                                            transition: transform .3s;
+                                        }
+                                    }
+                                    .ul__list{
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }   
+                    }
+                    .btn-detail{
+                        a{
+                            font-size: 25px;
+                            padding: 15px 60px;
+                        }
+                    }
+                }
+                .img-form{
+                    max-width: 625px;
+                    max-height: 715px;
+                    
+                    padding: 0 15px;
+                    z-index: -1;
+                    img{
+                        position: relative;
+                        left: -74%;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+@include mobile{
+    .contactpage{
+        .banner{
+            &__caption{
+                top: 140%;
+                &-des{
+                    h1{
+                        font-size: $fs-main-res;
+                        color: $black-cl;
+                    }
+                    h6{
+                        color: $black-cl;
+                        font-size: $fs-small-res;
+                    }
+                }
+            }
+        }
+        .wrapper{
+            .location{
+                margin:130px 0 30px 0;
+                .intro{
+                    margin-bottom: 30px;
+                    font-size: 18px;
+                }
+                .title{
+                    font-size: 24px;
+                }
+                h6{
+                    font-size: 18px;
+                }
+            }
+            .question{
+                margin: 30px 0;
+                .img-form{
+                    display: none;
+                }
+                &__form{
+                    padding: 0;
+                    &-title{
+                        h2{
+                            font-size: 24px;
+                        }
+                        h6{
+                            font-size: 18px;
+                        }
+                    }
+                    &-detail{
+                        .btn-detail{
+                            a{
+                                font-size: 16px;
+                                padding: 7px 30px;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+        }
+    }
+}

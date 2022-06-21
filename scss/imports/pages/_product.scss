@@ -1,0 +1,807 @@
+.productpage{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    --fs-title:50px;
+    .banner{
+        &__img{
+            position: relative;
+            img{
+                width: 100%;
+                max-height: 530px;
+            }
+        }
+        &__caption{
+            margin: 60px 0 180px 0;
+            @include midflex();
+            .title{
+                max-width: 730px;
+                text-align: center;
+                h1{
+                    @include text($fs-main,'SFU-A',auto,$black-cl,uppercase);
+                    padding-bottom:40px; 
+                }
+                p{
+                    @include text($fs-p,'SFU-R',auto,$black-cl,none);
+
+                }
+            }
+        }
+    }
+    .product1{
+        margin-bottom: 150px;
+        &__title{
+            ul{
+                display: flex;
+                align-items: center;
+                li{
+                    a{
+                        @include text(var(--fs-title),'SFU-A',auto,$black-cl,uppercase);
+                    }
+                    .grey{
+                        opacity: .6;
+                    }
+                }
+                .line-f{
+                    content: "";
+                    width: 1px;
+                    height: 40px;
+                    background-color: $black-cl;
+                    display: block;
+                    margin: 0 30px;
+                }
+                .line-black{
+                    content: "";
+                    width: 100%;
+                    max-width: 400px;
+                    height: 2px;
+                    background-color: $black-cl;
+                    display: block;
+                    margin-left: 5px;
+                }
+                span{
+                    position: relative;
+                    bottom: -3px;
+                }
+            }
+        }
+        &__content{
+            margin-top: 120px;
+            //position: relative;
+           
+            &-img{
+                position: relative;
+                //overflow: hidden;
+                padding: 0 15px;
+                img{
+                    width: 100%;
+                }
+                .img-skew{
+                    transform: skewX(-8deg);
+
+                }
+                .img-bike{
+                    position: absolute;
+                    bottom: -40px;
+                    right: -22px;
+                    max-width: 300px;
+                    max-height: 570px;
+                }
+            }
+            &-box{
+                position: relative;
+                &::after{
+                    content: "";
+                    width: 120%;
+                    height: 105%;
+                    background-color: $grey-cl;
+                    display: block;
+                    transform: skew(-8deg);
+                    position: absolute;
+                    top: 0;
+                    left: -20%;
+                    z-index: -1;
+                }
+                .caption{
+                    margin:20px 0 40px 0;
+                    max-width: 400px;
+                    text-align: left;
+                    h2{
+                        @include text($fs-main,'SFU-A',auto,$black-cl,uppercase);
+                        font-style: italic;
+                        padding-bottom: 20px;
+                    }
+                    p{
+                        @include text($fs-small,'SFU-R',auto,$black-cl,none);
+                        span{
+                            font-weight: 700;
+                            display: block;
+                        }
+                    }
+                }
+                .slideProduct{
+                    --fs-bike:21px;
+                    position: relative;
+                    &__list{
+                        &-item{
+                            padding: 0 5px;
+                            .card{
+                                margin: 0 5px;
+                                position: relative;
+                                max-height: 185px;
+                                .title{
+                                    a{
+                                        @include text(var(--fs-bike),'SFU-A',auto,$black-cl,uppercase);
+                                        font-weight: bold;
+                                    }
+                                    
+                                }
+                                .img{
+                                    overflow: hidden;
+                                    img{
+                                        width: 100%;
+                                    }
+                                }
+                                .price{
+                                    @include midflex();
+                                    justify-content: flex-start;
+                                    margin-top: 10px;
+                                    .line-d{
+                                        content: "";
+                                        width: 2px;
+                                        height: 40px;
+                                        background-color: $black-cl;
+                                        display: block;
+                                        margin-right: 5px;
+                                    }
+                                    a{
+                                        h6{
+                                            @include text(13px,'SFU-A',auto,$black-cl,uppercase);
+                                        }
+                                        h5{
+                                            @include text(29px,'SFU-A',auto,$black-cl,uppercase);
+                                        }
+                                    }
+                                }
+                                .hv{
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    bottom: 0;
+                                    right: 0;
+                                    margin: auto;
+                                    @include midflex();
+                                    display: inline-flex;
+                                    flex-direction: column;
+                                    opacity: 0;
+                                    transition: opacity .4s;
+                                    .btn-detail{
+                                        margin: 5px 0;
+                                    }
+                                }
+                                &:hover{
+                                    .hv{
+                                        opacity: 1;
+                                        transition: opacity .4s;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &__arrow{
+                        position: absolute;
+                        bottom: 50px;
+                        right: -40px;
+                        &-next{
+                            cursor: pointer;
+                            display: inline-block;
+                            background-color: $red-cl;
+                            transform: skew(-8deg);
+                            img{
+                                padding: 5px 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .product2{
+        margin-bottom: 150px;
+        &__content{
+            position: relative;
+            &::after{
+                content: "";
+                width: 120%;
+                height: 105%;
+                background-color: $grey-cl;
+                display: block;
+                transform: skew(-8deg);
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+            .caption{
+                margin:20px 0 40px 40px;
+                max-width: 400px;
+                text-align: left;
+                h2{
+                    @include text($fs-main,'SFU-A',auto,$black-cl,uppercase);
+                    font-style: italic;
+                    padding-bottom: 20px;
+                }
+                p{
+                    @include text($fs-small,'SFU-R',auto,$black-cl,none);
+                    span{
+                        font-weight: 700;
+                        display: block;
+                    }
+                }
+            }
+            .slideProduct{
+                --fs-bike:21px;
+                position: relative;
+                margin-left: 40px;
+                &__list{
+                    &-item{
+                        padding: 0 5px;
+                        .card{
+                            margin: 0 5px;
+                            position: relative;
+                            max-height: 170px;
+                            .title{
+                                a{
+                                    @include text(var(--fs-bike),'SFU-A',auto,$black-cl,uppercase);
+                                    font-weight: bold;
+                                }
+                                
+                            }
+                            .img{
+                                max-width: 182px;
+                                max-height: 116px;
+                                img{
+                                    width: 100%;
+                                }
+                            }
+                            .price{
+                                @include midflex();
+                                justify-content: flex-start;
+                                margin-top: 10px;
+                                .line-d{
+                                    content: "";
+                                    width: 2px;
+                                    height: 40px;
+                                    background-color: $black-cl;
+                                    display: block;
+                                    margin-right: 5px;
+                                }
+                                a{
+                                    h6{
+                                        @include text(13px,'SFU-A',auto,$black-cl,uppercase);
+                                    }
+                                    h5{
+                                        @include text(29px,'SFU-A',auto,$black-cl,uppercase);
+                                    }
+                                }
+                            }
+                            .hv{
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                bottom: 0;
+                                right: 0;
+                                margin: auto;
+                                @include midflex();
+                                display: inline-flex;
+                                flex-direction: column;
+                                opacity: 0;
+                                transition: opacity .4s;
+                                .btn-detail{
+                                    margin: 5px 0;
+                                }
+                            }
+                            &:hover{
+                                .hv{
+                                    opacity: 1;
+                                    transition: opacity .4s;
+                                }
+                            }
+                        }
+                    }
+                }
+                &__arrow{
+                    position: absolute;
+                    bottom: 50px;
+                    right: -70px;
+                    &-next{
+                        cursor: pointer;
+                        display: inline-block;
+                        background-color: $red-cl;
+                        transform: skew(-8deg);
+                        img{
+                            padding: 5px 15px;
+                        }
+                    }
+                }
+            }
+        }
+        &__img{
+            position: relative;
+            //overflow: hidden;
+            padding: 0 15px;
+            img{
+                width: 100%;
+            }
+            .img-skew{
+                transform: skewX(-8deg);
+
+            }
+            .img-bike{
+                position: absolute;
+                bottom: -40px;
+                right: -20px;
+                max-width: 565px;
+                max-height: 565px;
+            }
+        }
+    }
+    .product3{
+        margin-bottom: 150px;
+        &__content{
+            position: relative;
+            &::after{
+                content: "";
+                width: 120%;
+                height: 105%;
+                background-color: $grey-cl;
+                display: block;
+                transform: skew(-8deg);
+                position: absolute;
+                top: 0;
+                left: -20%;
+                z-index: -1;
+            }
+            .caption{
+                margin:20px 0 40px 40px;
+                max-width: 400px;
+                text-align: left;
+                h2{
+                    @include text($fs-main,'SFU-A',auto,$black-cl,uppercase);
+                    font-style: italic;
+                    padding-bottom: 20px;
+                }
+                p{
+                    @include text($fs-small,'SFU-R',auto,$black-cl,none);
+                    span{
+                        font-weight: 700;
+                        display: block;
+                    }
+                }
+            }
+            .slideProduct{
+                --fs-bike:21px;
+                position: relative;
+                margin-left: 40px;
+                &__list{
+                    &-item{
+                        padding: 0 5px;
+                        .card{
+                            margin: 0 5px;
+                            position: relative;
+                            max-height: 170px;
+                            .title{
+                                a{
+                                    @include text(var(--fs-bike),'SFU-A',auto,$black-cl,uppercase);
+                                    font-weight: bold;
+                                }
+                                
+                            }
+                            .img{
+                                max-width: 182px;
+                                max-height: 116px;
+                                img{
+                                    width: 100%;
+                                }
+                            }
+                            .price{
+                                @include midflex();
+                                justify-content: flex-start;
+                                margin-top: 10px;
+                                .line-d{
+                                    content: "";
+                                    width: 2px;
+                                    height: 40px;
+                                    background-color: $black-cl;
+                                    display: block;
+                                    margin-right: 5px;
+                                }
+                                a{
+                                    h6{
+                                        @include text(13px,'SFU-A',auto,$black-cl,uppercase);
+                                    }
+                                    h5{
+                                        @include text(29px,'SFU-A',auto,$black-cl,uppercase);
+                                    }
+                                }
+                            }
+                            .hv{
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                bottom: 0;
+                                right: 0;
+                                margin: auto;
+                                @include midflex();
+                                display: inline-flex;
+                                flex-direction: column;
+                                opacity: 0;
+                                transition: opacity .4s;
+                                .btn-detail{
+                                    margin: 5px 0;
+                                }
+                            }
+                            &:hover{
+                                .hv{
+                                    opacity: 1;
+                                    transition: opacity .4s;
+                                }
+                            }
+                        }
+                    }
+                }
+                &__arrow{
+                    position: absolute;
+                    bottom: 50px;
+                    right: -70px;
+                    &-next{
+                        cursor: pointer;
+                        display: inline-block;
+                        background-color: $red-cl;
+                        transform: skew(-8deg);
+                        img{
+                            padding: 5px 15px;
+                        }
+                    }
+                }
+            }
+        }
+        &__img{
+            position: relative;
+            //overflow: hidden;
+            padding: 0 15px;
+            img{
+                width: 100%;
+            }
+            .img-skew{
+                transform: skewX(-8deg);
+
+            }
+            .img-bike{
+                position: absolute;
+                bottom: -40px;
+                right: 0px;
+                max-width: 300px;
+                max-height: 570px;
+            }
+        }
+    }
+   
+}
+
+@include desktop{
+    .productpage{
+        .product1{
+            &__title{
+                ul{
+                    li{
+                        a{
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+            &__content{
+                &-box{
+                    &::after{
+                        width: 110%;
+                    }
+                    .caption{
+                        h2{
+                            font-size: 50px;
+                        }
+                    }
+                    .slideProduct{
+                        &__arrow{
+                            right: 0px;
+                        }
+                    }
+                }
+            }
+        }
+        .product2, .product3{
+            &__content{
+                &::after{
+                    width: 110%;
+                }
+            }
+        }
+    }
+}
+@include tablet{
+    .productpage{
+        .product1{
+            &__title{
+                ul{
+                    li{
+                        a{
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+            &__content{
+                &-img{
+                    .img-bike{
+                       
+                        bottom: -20px;
+                        right: -5px;
+                        max-width: 175px;
+                        max-height: 269px;
+                    }
+                }
+                &-box{
+                    &::after{
+                        width: 110%;
+                    }
+                    .caption{
+                        h2{
+                            font-size: 40px;
+                        }
+                    }
+                    .slideProduct{
+                        
+                        &__arrow{
+                            display: none;
+                        }
+                        &__list{
+                            &-item{
+                                .btn-detail{
+                                    a{
+                                        padding: 3px 10px;
+                                    }
+                                }
+                                .card{
+                                    .price{
+                                        a{
+                                            h5{
+                                                font-size: 20px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .product2, .product3{
+            &__content{
+                &::after{
+                    width: 110%;
+                }
+                .caption{
+                    h2{
+                        font-size: 40px;
+                    }
+                }
+                .slideProduct{
+                        
+                    &__arrow{
+                        display: none;
+                    }
+                    &__list{
+                        &-item{
+                            .card{
+                                .price{
+                                    a{
+                                        h5{
+                                            font-size: 20px;
+                                        }
+                                    }
+                                }
+                            }
+                            .btn-detail{
+                                a{
+                                    padding: 3px 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__img{
+                .img-bike{
+                    position: absolute;
+                    bottom: -30px;
+                    right: 0px;
+                    max-width: 250px;
+                    max-height: 565px;
+                }
+            }
+        }
+        .product3{
+            &__img{
+                .img-bike{
+                    position: absolute;
+                    bottom: -30px;
+                    right: 10px;
+                    max-width: 185px;
+                    max-height: 350px;
+                }
+            }
+        }
+    }
+}
+@include mobile{
+    .productpage{
+        .container{
+            padding: 0 5px;
+        }
+        .banner{
+            &__caption{
+                margin: 20px 0 60px 0;
+                .title{
+                    h1{
+                        font-size: $fs-main-res;
+                    }
+                    p{
+                        font-size: $fs-small-res;
+                    }
+                }
+            }
+        }
+        .product1{
+            margin-bottom: 50px;
+            &__title{
+                ul{
+                    li{
+                        a{
+                            font-size: 16px;
+                        }
+                    }
+                    .line-black{
+                        display: none;
+                    }
+                }
+            }
+            &__content{
+                margin-top: 60px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                &-img{
+                    .img-bike{
+                       
+                        bottom: -20px;
+                        right: -5px;
+                        max-width: 175px;
+                        max-height: 269px;
+                    }
+                }
+                &-box{
+                    margin-top: 30px;
+                    &::after{
+                        display: none;
+                    }
+                    .caption{
+                        text-align: center;
+
+                        h2{
+                            font-size: $fs-main-res;
+                        }
+                        p{
+                            font-size: $fs-small-res;
+                        }
+                    }
+                    .slideProduct{
+                        
+                        &__arrow{
+                            display: none;
+                        }
+                        &__list{
+                            &-item{
+                                margin-bottom: 120px;
+                                .btn-detail{
+                                    a{
+                                        padding: 3px 10px;
+                                    }
+                                }
+                                .card{
+                                    .price{
+                                        a{
+                                            h5{
+                                                font-size: 20px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .product2, .product3{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 50px;
+            &__content{
+                &::after{
+                    display: none;
+                }
+                .caption{
+                    margin: 20px 0 40px 0;
+                    h2{
+                        font-size: $fs-main-res;
+                    }
+                    p{
+                        font-size: $fs-small-res;
+                    }
+                }
+                .slideProduct{
+                        
+                    &__arrow{
+                        display: none;
+                    }
+                    &__list{
+                        &-item{
+                            margin-bottom: 50px;
+                            .card{
+                                .price{
+                                    a{
+                                        h5{
+                                            font-size: 20px;
+                                        }
+                                    }
+                                }
+                            }
+                            .btn-detail{
+                                a{
+                                    padding: 3px 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__img{
+                .img-bike{
+                    position: absolute;
+                    bottom: -30px;
+                    right: 0px;
+                    max-width: 250px;
+                    max-height: 565px;
+                }
+            }
+        }
+        .product3{
+            padding-top: 20px;
+            &__img{
+                .img-bike{
+                    position: absolute;
+                    bottom: -30px;
+                    right: 10px;
+                    max-width: 185px;
+                    max-height: 350px;
+                }
+            }
+            &__content{
+                margin-top: 30px;
+            }
+        }
+    }
+}
+

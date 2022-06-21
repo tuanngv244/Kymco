@@ -1,0 +1,405 @@
+.aboutpage{
+    .banner{
+        position: relative;
+        width: 100%;
+        --fs-title:70px;
+        --fs-h6:25px;
+        &__img{
+            img{
+                width: 100%;
+            }
+        }
+        &__caption{
+            @include mid();
+            &-des{
+                text-align: center;
+                h1{
+                    @include text(var(--fs-title),'SFU-A',auto,$white-cl,uppercase);
+                    letter-spacing: 1px;
+                }
+                h6{
+                    @include text(var(--fs-h6),'SFU-R',auto,$white-cl,none);
+                    padding-top: 20px;
+                }
+            }
+        }
+    }
+    .wrapper{
+        margin-top: 60px;
+        .tab{
+            &__title{
+                @include midflex();
+                ul{
+                    display: flex;
+                    align-items: center;
+                    li{
+                        margin:0 20px;
+                        opacity: .3;
+                        transition: opacity .3s;
+
+                        a{
+                            padding: 0 20px;
+                            @include text($fs-main,'SFU-A',22px,$black-cl,uppercase);
+                           
+                        }
+                        &:hover{
+                            opacity: 1;
+                            transition: opacity .3s;
+                        }
+                    }
+                    .active{
+                        opacity: 1;
+                        transition: opacity .3s;
+                    }
+                    span{
+                        content: "";
+                        width: 2px;
+                        height: 40px;
+                        background-color: $black-cl;
+                        display: block;
+                    }
+                }
+            }
+            .line-grey{
+                width: 100%;
+                height: 2px;
+                background-color: #888888;
+                display: block;
+                margin: 40px 0 130px 0;
+            }
+            &__content{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                margin-bottom: 100px;
+                &-caption{
+                    max-width: 730px;
+                    margin: auto;
+                    text-align: center;
+                    h2{
+                        @include text(60px,'SFU-A',auto,$black-cl,uppercase);
+                    }
+                    p{
+                        padding: 20px 0 0 0;
+                        @include text($fs-p,'SFU-R',auto,#888888,none);
+
+                    }
+                }
+                &-slide{
+                    margin: 120px 0;
+                    width: 100%;
+                    .list__slide{
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        &-item{
+                            width: 100%;
+                            @include midflex();
+                            justify-content: flex-start;
+                            .box__left, .box__right{
+                                overflow: hidden;
+                                background: $red-cl;
+                                max-width: 474px;
+                                max-height: 527px;
+                                width: 30%;
+                                @include midflex();
+                                flex-direction: column;
+                                &-img{
+                                    width: 400px;
+                                    height: 220px;
+                                    
+                                    img{
+                                        width: 100%;
+                                    }
+                                }
+                                &-caption{
+                                    text-align: center;
+                                    padding: 40px;
+                                    h3{
+                                        margin-top: 50px;
+                                        @include text(80px,'SFU-A',auto,$white-cl,uppercase);
+                                    }
+                                    .white{
+                                        content: "";
+                                        width: 35px;
+                                        height: 5px;
+                                        border-radius: 30px;
+                                        display: block;
+                                        margin: 30px auto;
+                                        background-color: $white-cl;
+                                    }
+                                    p{
+                                        @include text($fs-small,'SFU-R',auto,$white-cl,none);
+                                    }
+                                }
+                            }
+                            .box__right{
+                                &-caption{
+                                    h3{
+                                        margin-top: 50px;
+                                    }
+                                }
+                            }
+                            .box__mid{
+                                overflow: hidden;
+                                width: 30%;
+                                @include midflex();
+                                flex-direction: column;
+                                background: #f6f4f5;
+                                max-width: 474px;
+                                max-height: 527px;
+                                &-caption{
+                                    text-align: center;
+                                    padding: 10px;
+                                   
+                                    h3{
+                                        margin-top: 50px;
+                                        @include text(80px,'SFU-A',auto,$black-cl,uppercase);
+                                    }
+                                    .black{
+                                        content: "";
+                                        width: 35px;
+                                        height: 5px;
+                                        border-radius: 30px;
+                                        display: block;
+                                        margin: 30px auto;
+                                        background-color: $black-cl;
+                                    }
+                                    p{
+                                        @include text($fs-small,'SFU-R',auto,$black-cl,none);
+                                    }
+                                }
+                                &-img{
+                                    img{
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                            .box__arrow{
+                                width: 10%;
+                                height: 527px;
+                                @include midflex();
+                                background: #888888;
+                                .next{
+                                    cursor: pointer;
+                                    img{
+                                        transition: transform .4s;
+                                        
+                                    }
+                                    &:hover{
+                                        img{
+                                            transform: translateX(20px) scale(1.2);
+                                            transition: transform .4s;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &-logo{
+                    .caption{
+                        text-align: center;
+                        margin: auto;
+                        max-width: 625px;
+                        padding-bottom: 30px;
+                        h3{
+                            @include text(60px,'SFU-A',auto,$black-cl,uppercase);
+
+                        }
+                        p{
+                            padding-top: 20px;
+                            @include text($fs-p,'SFU-R',36px,$black-cl,none);
+
+                        }
+                    }
+                    .content-img{
+                       max-height: 300px;
+                       overflow: hidden;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .list-logo{
+                        margin-bottom: 30px;
+                        .logo-item{
+                            --fs-title:60px;
+                            padding: 0 15px;
+                            .card{
+                                margin: 0 15px;
+                                text-align: center;
+                                @include midflex();
+                                flex-direction: column;
+                                padding: 40px;
+                                border: 1px solid #d1d1d1;
+                                max-height: 360px;
+                                background: $white-cl;
+                                img{
+                                    width: 100%;
+                                }
+                                h5{
+                                    @include text(var(--fs-title),'SFU-A',auto,$black-cl,uppercase);
+                                }
+                                p{
+                                    @include text($fs-small,'SFU-R',auto,#888888,none);
+
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include desktop{
+    .aboutpage{
+        .wrapper{
+            .tab{
+                &__title{
+                    ul{
+                        li{
+                            a{
+                                font-size: 40px;
+                            }
+                        }
+                    }
+                }
+                &__content{
+                    &-caption{
+                        h2{
+                            font-size: 40px;
+                        }
+                        p{
+                            font-size: 18px;
+                        }
+                    }
+                    &-slide{
+                        .list__slide{
+                            &-item{
+                                .box__left{
+                                    &-caption{
+                                        p{
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 2;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include tablet{
+    .aboutpage{
+        .wrapper{
+            .tab{
+                &__title{
+                    ul{
+                        li{
+                            a{
+                                font-size: 30px;
+                            }
+                        }
+                    }
+                }
+                &__content{
+                    &-caption{
+                        h2{
+                            font-size: 40px;
+                        }
+                        p{
+                            font-size: 18px;
+                        }
+                    }
+                    &-slide{
+                        .list__slide{
+                            &-item{
+                                .box__left{
+                                    &-caption{
+                                       
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mobile{
+    .aboutpage{
+        .banner{
+            &__caption{
+                top: 140%;
+                &-des{
+                    h1{
+                        font-size: $fs-main-res;
+                        color: $black-cl;
+                    }
+                    h6{
+                        font-size: $fs-small-res;
+                        color: $black-cl;
+                    }
+                }
+            }
+        }
+        .wrapper{
+            margin-top: 110px;
+            .tab{
+                &__title{
+                    ul{
+                        li{
+                            a{
+                                font-size: 20px;
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+                &__content{
+                    &-caption{
+                        h2{
+                            font-size: $fs-main-res;
+                        }
+                        p{
+                            font-size: $fs-small-res;
+                        }
+                    }
+                    &-slide{
+                        .list__slide{
+                            &-item{
+                                flex-direction: column;
+                                .box__left, .box__mid, .box__right{
+                                    width: 100%;
+                                }
+                                .box__arrow{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                    &-logo{
+                        .list-logo{
+                            .logo-item{
+                                padding: 0;
+                                margin-bottom: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,393 @@
+.recuitpage{    
+    .banner{
+        width: 100%;
+        height: 100%;
+        position: relative;
+       &__img{
+            overflow: hidden;
+            position: relative;
+             img{
+                width: 100%;
+            }
+        }
+        &__caption{
+            @include mid();
+            --fs-main:70px;
+            --fs-25:25px;
+            &-des{
+                text-align: center;
+                h1{
+                    @include text(var(--fs-main),'SFU-A',22px,$white-cl,uppercase);
+                    
+                }
+                h6{
+                    margin-top: 40px;
+                    @include text(var(--fs-25),'SFU-R',22px,$white-cl,none);
+                }
+            }
+        }
+    }
+    .content{
+        --fs-title:35px;
+        --fs-p:22px;
+        .boxOne{
+            position: relative;
+            @include midflex();
+            margin-top: 55px;
+            .box-left{
+                padding: 0 15px;
+                .img-boxOne{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .box-right{
+                padding: 0 15px;
+                .caption{
+                    max-width: 500px;
+                    .line-black{
+                        content: "";
+                        width: 90px;
+                        height: 5px;
+                        background-color: $black-cl;
+                        display: block;
+                        transform: translateX(-60px);
+                        margin-bottom: 10px;
+                        z-index: 5;
+                    }
+                    h2{
+                        @include text(var(--fs-title),'SFU-A',auto,$black-cl,uppercase);
+                    }
+                    p{
+                        margin-top: 30px;
+                        @include text(var(--fs-p),'SFU-R',auto,$black-cl,none);
+                    }
+                }
+            }
+        }
+        .boxTwo{
+            margin-top: 90px;
+            @include midflex();
+            align-items: flex-end;
+            .box-left{
+                padding: 0 15px;
+                .caption{
+                    max-width: 315px;
+                    .line-black{
+                        content: "";
+                        width: 50px;
+                        height: 5px;
+                        background-color: $black-cl;
+                        display: block;
+                        margin-bottom: 10px;
+                        z-index: 5;
+                    }
+                    h2{
+                        @include text(var(--fs-title),'SFU-A',auto,$black-cl,uppercase);
+                        margin-bottom: 50px;
+                    }
+                    h4{
+                        @include text(24px,'SFU-A',auto,$black-cl,none);
+                        margin: 30px 0;
+                    }
+                    p{
+                        margin-top: 30px;
+                        @include text(var(--fs-p),'SFU-R',auto,$black-cl,none);
+                    }
+                }
+            }
+            .box-right{
+                padding: 0 15px;
+                .img-boxTwo{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .boxThree{
+            margin-top: 120px;
+            margin-bottom: 150px;
+            position: relative;
+            .caption{
+                text-align: center;
+                margin-bottom: 90px;
+                @include midflex();
+                flex-direction: column;
+                span{
+                    content: "";
+                    width: 50px;
+                    height: 5px;
+                    background-color: $black-cl;
+                    display: block;
+                    margin-bottom: 30px;
+                }
+                h2{
+                    @include text(var(--fs-title),'SFU-A',auto,$black-cl,uppercase);
+                }
+            }
+            .slide{
+                --fs-32:32px;
+                &__list{
+                    &-item{
+                        padding: 0 15px;
+                        .card{
+                            border: 1px solid grey;
+                            position: relative;
+                            background: $white-cl;
+                            &-header{
+                                @include midflex();
+                                flex-direction: column;
+                                h3{
+                                    @include text(var(--fs-32),'SFU-A',auto,$red-cl,uppercase);
+                                    margin-bottom: 10px;
+                                }
+                                h5{
+                                    @include text(var(--fs-32),'SFU-A',auto,$black-cl,none);
+                                }
+                                span{
+                                    content: "";
+                                    width: 50px;
+                                    height: 5px;
+                                    background-color: $black-cl;
+                                    display: block;
+                                    margin: 20px 0;
+                                }
+                            }
+                            &-body{
+                                margin-bottom: 50px;
+                                .des{
+                                    max-width: 250px;
+                                    text-align: center;
+                                    margin: auto;
+                                    p{
+                                        @include text(var(--fs-p),'SFU-R',auto,$black-cl,none);
+                                       overflow: hidden;
+                                    }
+                                }                                
+                            }
+                            &-footer{
+                                @include midflex();
+                            
+                                .btnRed{
+                                    display: inline-block;
+                                    a{
+                                        @include text(26px,'SFU-A',22px,$red-cl,none);
+                                        position: relative;
+                                        &::after{
+                                            content: "";
+                                            width: 100%;
+                                            height: 2px;
+                                            background-color: $red-cl;
+                                            display: block;
+                                            position: absolute;
+                                            left: 0;
+                                            right: 0;
+                                            margin: 5px auto;
+                                            transition: width .3s linear;
+
+                                        }
+                                    }
+                                    &:hover{
+                                        a{
+                                            &::after{
+                                                width: 10%;
+                                                transition: width .3s linear;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &-header, &-body{
+                                padding: 20px;
+                            }
+                            &-footer{
+                                padding: 40px 20px;
+                            }
+                            &::after{
+                                content: "";
+                                width: 100%;
+                                height: 10px;
+                                background-color: $red-cl;
+                                display: block;
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                            }
+                        }
+                    }
+                }
+                &__pagin{
+                    margin-top: 50px;
+                    @include midflex();
+                    .prev, .next{
+                        border: 1px solid #888888;
+                        display: inline-block;
+                        cursor: pointer;
+                        transition: background .4s;
+                        background: $white-cl;
+                        a{
+                            padding: 7px 12px;
+                            @include text(20px,'UTM-B',auto,$black-cl,none);
+                            transition: color .4s;
+                            
+                        }
+                        &:hover{
+                            border: 1px solid $white-cl;
+                            a{
+                                color: $white-cl;
+                                transition: color .4s;
+                            }
+                            background: $red-cl;
+                            transition: background .4s;
+                        }
+                    }
+                    .list__page{
+                        @include midflex();
+                        justify-content: flex-start;
+                        li{
+                            border: 1px solid #888888;
+                            margin: 0 5px;
+                            transition: background .4s;
+                        background: $white-cl;
+                            
+                            a{
+                                padding: 7px 10px;
+                                @include text(20px,'UTM-B',auto,$black-cl,none);
+                                transition: color .4s;
+    
+                            }
+                            &:hover{
+                                border: 1px solid $white-cl;
+                                a{
+                                    color: $white-cl;
+                                    transition: color .4s;
+                                }
+                                background: $red-cl;
+                                transition: background .4s;
+                            }
+                        }
+                        .active{
+                            background: $red-cl;
+                            border: 1px solid $red-cl;
+                            transition: background .4s;
+                            a{
+                                color: $white-cl;
+                                transition: color .4s;
+    
+                            }
+                        }
+                    }
+                }
+            }
+
+            .bg-boxThree{
+                position: absolute;
+                bottom: -50px;
+                z-index: -1;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+@include tablet{
+    .recuitpage{
+        .content{
+            .boxThree{
+                .slide{
+                    &__list{
+                        &-item{
+                            .card{
+                               
+                                &-body{
+                                    p{
+                                        display: -webkit-box;
+                                        -webkit-line-clamp: 4;
+                                        -webkit-box-orient: vertical;                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mobile{
+    .recuitpage{
+        .banner{
+            &__caption{
+                top: 140%;
+                &-des{
+                    h1{
+                        font-size: $fs-main-res;
+                        color: $black-cl;
+                    }
+                    h6{
+                        margin-top: 20px;
+                        font-size: $fs-small-res;
+                        color: $black-cl;
+                    }
+                }
+            }
+        }
+        .content{
+            .boxOne{
+                margin-top: 140px;
+                display: flex;
+                flex-direction: column;
+                .box-right{
+                    .caption{
+                        max-width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+            .boxTwo{
+                display: flex;
+                flex-direction: column;
+                .box-right{
+                    margin-top: 30px;
+                }
+                .box-left{
+                    .caption{
+                        max-width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+            .boxThree{
+                padding: 0 5px;
+                .slide{
+                    &__list{
+                        &-item{
+                            margin-bottom: 30px;
+                            padding: 0;
+                        }
+                    }
+                    &__pagin{
+                        .prev, .next{
+                            a{
+                                font-size: 12px;
+                            }
+                        }
+                        .list__page{
+                            li{
+                                a{
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}

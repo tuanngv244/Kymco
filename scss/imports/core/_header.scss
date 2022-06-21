@@ -1,0 +1,335 @@
+
+
+header{
+    background: $white-cl;
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
+    border-bottom: 2px solid $red-cl;
+    transition: all .4s;
+
+    .header{
+        height: 100%;
+        width: 100%;
+        max-width: 1500px;
+        padding: 0 10px;
+        margin: auto;
+        @include midflex();
+        justify-content: space-between;
+
+        &__navi{
+            nav{
+                ul{
+                    display: inline-flex;
+                    align-items: center;
+                    --transition:width .4s;
+                    li{
+                        margin: 0 20px;
+                        a{
+                            @include text($fs-small,'UTM',$lh-small,$black-cl,uppercase);
+                            position: relative;
+                            &:after{
+                                content: "";
+                                background-color: $red-cl;
+                                width: 0%;
+                                height: 1px;
+                                position: absolute;
+                                bottom: -3px;
+                                left: 0;
+                                transition: var(--transition);
+
+                            }
+                            &:hover{
+                                &::after{
+                                    width: 100%;
+                                    transition: var(--transition);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &__more{
+            @include midflex();
+            .search{
+                position: relative;
+                input{
+                    position: absolute;
+                    bottom: -85px;
+                    left: -150px;
+                    outline: none;
+                    background: transparent;
+                    border: none;
+                    background: $red-cl;
+                    padding: 20px 10px;
+                    border-bottom: 1px solid $white-cl;
+                    opacity: 0;
+                    transition: all .4s;
+                }
+                .input-active{
+                    bottom: -65px;
+                    opacity: 1;
+                    transition: all .4s;
+                }
+                .img-search{
+                    cursor: pointer;
+                }
+            }
+            .daiLy{
+                margin: 0 20px;
+            }
+        }
+    }
+}
+.header__active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $white-cl;
+    transition: all .4s;
+}
+.menuMobile{
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 999;
+    &__top{
+        padding: 0 10px;
+        height: 40px;
+        background-color: $black-cl;
+        @include midflex();
+        justify-content: space-between;
+        &-brand{
+            img{
+            width: 150px;
+            }
+        }
+        .btnClose{
+            span{
+                content: "";
+                width: 20px;
+                height: 3px;
+                border-radius: 40px;
+                margin: 3px 0;
+                background-color: $white-cl;
+                display: block;
+                position: relative;
+                transition: all .3s;
+            }
+        }
+        .X_active{
+            .line-1{
+                transform: rotate(45deg);
+                transition: all .3;
+                bottom: -2px;
+                left: -2px;
+            }
+            .line-2{
+                display: none;
+            }
+            .line-3{
+                transform: rotate(-45deg);
+                transition: all .3;
+                top: -4px;
+                left: -2px;
+            }
+        }
+    }
+    &__main{
+        @include midflex();
+        justify-content: flex-start;
+        flex-direction: column;
+        background: $red-cl;
+        height: 100%;
+        left: -100%;
+        position: relative;
+        transition: left .7s;
+        max-width: 90%;
+        &-navi{
+            margin-top: 20px;
+            width: 100%;
+            ul{
+                padding: 0 10px;
+                li{
+                    padding: 15px 0;
+                    position: relative;
+                    a{
+                        @include text($fs-p,'SFU-R',$lh-text,$white-cl,uppercase);
+                        font-weight: 700;
+                        position: relative;
+                       
+                    }
+                    &::after{
+                        content: "";
+                        width: 0%;
+                        height: 1px;
+                        background-color: $white-cl;
+                        display: block;
+                        position: absolute;
+                        bottom: 10px;
+                        left: 0;
+                        transition: width .3s;
+
+                    }
+                    &:hover{
+                        &::after{
+                            width: 50%;
+                            transition: width .3s;
+                        }
+                    }
+                }
+                .toggle{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    img{
+                        height: 22px;
+                        transition: transform .3s;
+
+                    }
+                    .img_rotate{
+                        transform: rotate(90deg);
+                        transition: transform .3s;
+                    }
+                    
+                }
+                .list_item{
+                    width: 100%;
+                    height: 100%;
+                    display: none;
+                    margin: 20px 0;
+                    li{
+                        padding: 10px 0;
+                        a{
+                            font-size: $fs-small;
+                            &::after{
+                                bottom: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+       
+        &-link{
+            margin: 40px 0;
+            ul{
+                @include midflex();
+                li{
+                    margin:0 20px;
+                    position: relative;
+                    &::after{
+                        content: "";
+                        width: 0%;
+                        height: 1px;
+                        background-color: $white-cl;
+                        display: block;
+                        position: absolute;
+                        bottom: -3px;
+                        transition: width .3s;
+
+                    }
+                    &:hover{
+                        &::after{
+                            width: 100%;
+                            transition: width .3s;
+                        }
+                    }
+                }
+            }
+        }
+        &-search{
+            width: 100%;
+            padding: 0 10px;
+            @include midflex();
+            justify-content: space-between;
+            input{
+                width: 80%;
+                outline: none;
+                background: transparent;
+                border: none;
+                background: $red-cl;
+                padding: 10px;
+                border: 1px solid $white-cl;
+                margin-right: 10px;
+            }
+            img{
+                cursor: pointer;
+            }
+        }
+    }
+    .menuMobile_active{
+        left: 0;
+        height: 100vh;
+        transition: left .7s;
+    }
+}
+@include desktop{
+    header{
+        .header{
+            &__brand{
+                width: 130px;
+            }
+            &__navi{
+                nav{
+                    ul{
+                        li{
+                            margin: 0 5px;
+                        }
+                    }
+                }
+            }
+            &__more{
+                .daiLy{
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+}
+
+@include tablet{
+    header{
+        .header{
+            padding:0  5px;
+            &__brand{
+                width: 130px;
+            }
+            &__navi{
+                nav{
+                    ul{
+                        li{
+                            margin: 0 5px;
+                        }
+                    }
+                }
+            }
+            &__more{
+                .search{
+                    display: none;
+                }
+                .daiLy{
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+}
+
+@include mobile{
+    .menuMobile{
+        display: block;
+    }
+    header{
+        display: none;
+    }
+}

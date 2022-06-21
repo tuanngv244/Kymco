@@ -1,0 +1,120 @@
+footer {
+	background: $black-cl;
+	.container{
+		padding: 0 5px;
+		.footer{
+			padding: 50px 0;
+			@include midflex();
+			flex-direction: column;
+			.title{
+				h2{
+					@include text(30px,'SFU-A',$lh-text,$white-cl,uppercase);
+				}
+			}
+			.iconLink{
+				margin: 40px 0 20px 0;
+				ul{
+					@include midflex();
+					li{
+						margin: 0 20px;
+						position: relative;
+						&::after{
+							content: "";
+							width: 0%;
+							height: 1px;
+							background-color: $white-cl;
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							transition: width .3s;
+
+						}
+						&:hover{
+							&::after{
+								width: 100%;
+								transition: width .3s;
+							}
+						}
+					}
+				}
+			}
+			.nextwork{
+				margin: 20px 0;
+				ul{
+					@include midflex();
+					li{
+						margin: 0 20px;
+						a{
+							@include text($fs-small,'UTM',$lh-text,$white-cl,uppercase);
+							position: relative;
+							&:after{
+								content: "";
+								width: 0%;
+								height: 1px;
+								background-color: $white-cl;
+								position: absolute;
+								bottom: 0;
+								right: 0;
+								transition: all .3s;
+
+							}
+							&:hover{
+								&::after{
+									width: 100%;
+									left: 0;
+									transition: all .3s;
+								}
+							}
+						}
+
+						
+					}
+					span{
+						color: $white-cl;
+					}
+				}
+			}
+			.brand{
+				margin: 20px 0;
+			}
+			.reseved{
+				p{
+					@include text($fs-small,'UTM',$lh-text,$white-cl,uppercase);
+
+				}
+			}
+		}
+	}
+
+	@include desktop {
+		
+	}
+	@include tablet {
+		
+	}
+	@include mobile {
+		.container{
+			.footer{
+				.nextwork{
+					ul{
+						flex-direction: column;
+						span{
+							display: none;
+							
+						}
+						li{
+							margin: 10px 0;
+						}
+					}
+				}
+				.reseved{
+					text-align: center;
+				}
+			}
+		}
+	}
+	@include mobile-xxs {
+		
+	}
+}
+

@@ -1,0 +1,200 @@
+.servicepage{
+    .banner{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        --fs-title:70px;
+        --lh-title:22px;
+        --fs-title-small:25px;
+        &__img{
+            img{
+                width: 100%;
+            }
+        }
+        &__caption{
+            @include mid();
+            &-des{
+                text-align: center;
+                h1{
+                    @include text(var(--fs-title),'SFU-A',var(--lh-title),$white-cl,uppercase);
+                }
+                h6{
+                    padding-top: 50px;
+                    @include text(var(--fs-title-small),'SFU-R',var(--lh-title),$white-cl,uppercase);
+
+                }
+            }
+        }
+    }
+    .service{
+        margin: 100px 0 400px 0;
+        .faq{
+            --fs-30:30px;
+            --LH-50:50px;
+            .caption{
+                margin-bottom: 70px;
+                h2{
+                    @include text(40px,'SFU-A',auto,$black-cl,uppercase);
+                    font-weight: bold;
+                }
+            }
+            &__title{
+                &-box{
+                    background: $red-cl;
+                    ul{
+                        color: $white-cl;
+                        padding: 15px;
+                        margin-left: 40px;
+                        list-style: square;
+                        li{
+                            margin: 10px 0;
+                            position: relative;
+                            &::after{
+                                content: "";
+                                width: 0%;
+                                height: 5px;
+                                background-color: $white-cl;
+                                display: block;
+                                position: absolute;
+                                bottom: 14px;
+                                left: -12%;
+                                transition: width .3s;
+
+                            }
+                            a{
+                                @include text(var(--fs-30),'SFU-A',var(--LH-50),$white-cl,uppercase);
+                            }
+                            &:hover{
+                                &::after{
+                                    width: 8%;
+                                    transition: width .3s;
+                                }
+                            }
+                        }
+                        .active{
+                            &::after{
+                                width: 8%;
+                                transition: width .3s;
+                            }
+                        }
+                    }
+                }
+            }
+            &__content{
+                &-item{
+                    display: none;
+                    h6{
+                        @include text(var(--fs-30),'SFU-A',36px,$black-cl,none);
+
+                    }
+                    .btn-detail{
+                        margin-top: 90px;
+                        a{
+                            font-size: 25px;
+                            padding: 15px 60px;
+                        }
+                    }
+                    .form{
+                        &__name, &__email, &__phone, &__title, &__des{
+                            padding: 0 15px;
+                            margin-bottom: 20px;
+                            input{
+                                outline: none;
+                                background: transparent;
+                                border: none;
+                                border-bottom: 2px solid $black-cl;
+                                width: 100%;
+                                padding: 5px;
+                                @include text($fs-small,'SFU-R',auto,$black-cl,none);
+                            }
+                            textarea{
+                                outline: none;
+                                background: transparent;
+                                border: none;
+                                border-bottom: 2px solid $black-cl;
+                                width: 100%;
+                                padding: 5px;
+                                resize: none;
+                                @include text($fs-small,'SFU-R',auto,$black-cl,none);
+                            }
+                        }
+                    }
+                    .error{
+                        p{
+                            @include text($fs-small,'SFU-R',auto,$red-cl,none);
+                        }
+                    }
+                }
+                .content__active{
+                    display: block;
+                }
+            }
+        }
+    }
+    
+
+    @include tablet{
+        .service{
+            .faq{
+                &__content{
+                    &-item{
+                        .form{
+                            input{
+                                margin-bottom: 30px;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include mobile{
+        .banner{
+            &__caption{
+                top: 140%;
+                &-des{
+                    h1{
+                        font-size: $fs-main-res;
+                        color: $black-cl;
+                    }
+                    h6{
+                        padding-top: 10px;
+                        font-size: $fs-small-res;
+                        color: $black-cl;
+
+                    }
+                }
+            }
+        }
+        .service{
+            margin: 125px 0;
+            .faq{
+                
+                &__content{
+                    margin-top: 50px;
+                    &-item{
+                        .form{
+                            input{
+                                margin-bottom: 15px;
+
+                            }
+                        }
+                        h6{
+                            font-size: 20px;
+                        }
+                        .btn-detail{
+                            a{
+                                font-size: 18px;
+                                padding: 10px 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .container{
+            padding: 0 5px;
+        }
+    }
+}

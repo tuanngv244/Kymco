@@ -1,0 +1,706 @@
+.homepage{
+    width: 100%;
+    height: 100%;
+    .banner{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        //overflow: hidden;
+        .slide{
+            height: 100%;
+            &__list{
+                height: 100%;
+                &-item{
+                    height: 100%;
+                    position: relative;
+                    overflow: hidden;
+                    .img__main{
+                        height: 100%;
+                        position: relative;
+                        overflow: hidden;
+                       .img-slide{
+                            width: 100%;
+                            max-width: 100%;
+                       }
+                       .img_moutain{
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            max-height: 141px;
+                            z-index: 3;
+                            .moutain{
+                                width: 100%;
+                            }
+                       }
+                       .img_moto{
+                           max-width: 1055px;
+                           max-height: 746px;
+                           position: absolute;
+                           bottom: 0px;
+                           right: 0;
+                           z-index: 2;
+                        .moto-banner{
+                            width: 100%;
+                            max-width: 100%;
+                        }
+                       }
+                       .img_moutain{
+                           max-width: 80%;
+                       }
+                    }
+                    .caption__main{
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        z-index: 30;
+                        .title{
+                            --fs-h3:48px;
+                            text-align: center;
+                            transform: translateX(-7%);
+
+                            h1{
+                                @include text(calc(7vw + 7vh),'UTM',7vw,$white-cl,uppercase);
+                                font-weight: 700;
+                                opacity: .3;
+                            }
+                            h3{
+                                @include text(var(--fs-h3),'UTM',auto,$white-cl,none);
+                                font-weight: 700;
+                               
+                                
+                            }
+                        }
+                        
+                    }
+                    .item__bottom{
+                        position: absolute;
+                        bottom: 30px;
+                        width: 100%;
+                        z-index: 5;
+                        &-container{
+                            max-width: 1500px;
+                            margin: auto;
+                            padding: 0 10px;
+                            @include midflex();
+                            justify-content: space-between;
+                            .scrolldown{
+                                writing-mode: vertical-lr;
+                                @include midflex();
+                                p{
+                                    @include text($fs-small,'SFU-R',$lh-text,$white-cl,none);
+                                    margin-bottom: 10px;
+                                }
+                                img{
+                                    position: relative;
+                                    left: -4px;
+                                    animation: quay 2s infinite;
+                                }
+                                @keyframes quay {
+                                    0%{
+                                        transform: translateY(0);
+                                    }
+                                    50%{
+                                        transform: translateY(20px) ;
+                                    }
+                                    100%{
+                                        transform: translateY(0px);
+
+                                    }
+                                }
+                            }
+                            .count{
+                                &__active, .g{
+                                    @include text(70px,'UTM',90px,$white-cl,uppercase);
+                                    font-weight: 700;
+                                    transition: all .5s;
+                                }
+                                &__default{
+                                    @include text(48px,'UTM',90px,$white-cl,uppercase);
+                                    font-weight: 700;
+                                    
+                                    opacity: .3;
+                                }
+                            }
+                        } 
+                       
+                    }
+                }
+            }
+        }
+    }
+    .wrapper{
+        .sec-1{
+            margin: 120px 0 100px 0;
+            position: relative;
+           .container{
+            .sec1{
+                &__caption{
+                    position: absolute;
+                    z-index: 10;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    &-des{    
+                        max-width: 475px;
+                        .line-black{
+                            content: "";
+                            width: 100%;
+                            height: 4px;
+                            background-color: $black-cl;
+                            transform: translateX(-100%);
+                        }
+                        h2{
+                            position: relative;
+                            @include text($fs-main,'SFU-A',$lh-text,$black-cl,uppercase);
+                        }
+                        p{
+                            @include text($fs-p,'SFU-R',$lh-small,$black-cl,none);
+
+                        }
+                    }
+                    
+                }
+                .sec1-img{
+                    float: right;
+                    overflow: hidden;
+                    max-width: 100%;
+                    max-height: 453px;
+                    
+                    img{
+                        width: 100%;
+                    }
+                }
+                .btnSlide{
+                    position: absolute;
+                    bottom: 0;
+                    
+                    display: flex;
+                    align-items: center;
+                    &__prev, &__next{
+                        background-color: $red-cl;
+                        display: inline-flex;
+                        align-items: center;
+                        cursor: pointer;
+                            transition: background .4s;
+
+                        img{
+                            padding: 7px 0 7px 15px;
+                        }
+                        &:hover{
+                            background: lightgray;
+                            transition: background .4s;
+                        }
+                        .next-line, .prev-line{
+                            content: "";
+                            width: 0px;
+                            height: 2px;
+                            background-color: $white-cl;
+                            display: inline-block;
+                            transition: width .3s;
+                        }
+                        
+                    }
+                    &__next{
+                        .next-line{
+                        margin-left: 15px;
+
+                        }
+                        img{
+                            transform: rotate(180deg);
+
+                        }
+                        &:hover{
+                            .next-line{
+                                width: 20px;
+                                transition: width .3s;
+                            }
+                        }
+                    }
+                    &__prev{
+                        .prev-line{
+                            margin-right: 15px;
+                            &::after{
+                                right: 0;
+                            }
+
+                        }
+                        &:hover{
+                            .prev-line{
+                                width: 20px;
+                                transition: width .3s;
+                            }
+                        }
+                    }
+                }
+            }
+           }
+            
+        }
+        .sec-2{
+            .container{
+                .productHot{
+                    &__caption{
+                        text-align: center;
+                        margin-bottom: 80px;
+                        h2{
+                            @include text($fs-main,'SFU-A',$lh-text,$black-cl,uppercase);
+
+                        }
+                        p{
+                            @include text($fs-p,'SFU-R',$lh-text,$black-cl,none);
+
+                        }
+                    }
+                    &__list{
+                        margin-bottom: 80px;
+                        &-item{
+                            .card{
+                                overflow: hidden;
+                                position: relative;
+                                max-height: 420px;
+                                transition: transform .4s;
+
+                                .caption{
+                                    position: absolute;
+                                    z-index: 10;
+                                    top: 5px;
+                                    left: 10px;
+                                    h2{
+                                        @include text(42px,'SFU-A',$lh-text,$white-cl,uppercase);
+                                        letter-spacing: 2px;
+                                        opacity: .9;
+                                    }
+                                    h3{
+                                        @include text(36px,'SFU-A',$lh-text,$white-cl,uppercase);
+
+                                    }
+                                }
+                                .img{
+                                    overflow: hidden;
+                                    max-height: 475px;
+                                    img{
+                                        width: 100%;
+                                        height: 475px;
+                                    }
+                                }
+                                .moto{
+                                    position: absolute;
+                                    bottom: -60px;
+                                    right: -60px;
+                                    max-width: 255px;
+                                    img{
+                                        width: 100%;
+                                    }
+                                }
+                                .moto-main{
+                                    max-width: 100%;
+                                    bottom: 0;
+                                    right: 0;
+                                    .motopipe{
+                                        position: relative;
+                                        bottom: -90px;
+                                    }
+                                    .img-moutain{
+                                        position: relative;
+                                        bottom: -3px;
+                                    }
+                                }
+                                .moto-candy{
+                                    max-width: 100%;
+                                    right: 0;
+                                    bottom: 0;
+                                }
+                                &:hover{
+                                    transform: scale(1.1);
+                                    transition: transform .4s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .sec-3{
+            background-image: url('./../img/item/home/background-1.jpg');
+            //background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin-bottom:110px;
+            .container{
+                .sec3__caption{
+                    padding: 70px 0 300px 0;
+                    &-des{
+                        h2{
+                            @include text($fs-main,'SFU-A',$lh-text,$black-cl,uppercase);
+
+                        }
+                        p{
+                            @include text($fs-p,'SFU-R',$lh-text,$black-cl,none);
+                            margin-bottom: 40px;
+                        }
+                    }
+                }
+            }
+        }
+        .sec-4{
+            margin-bottom: 120px;
+            .container{
+                .news{
+                    &__caption{
+                        margin-bottom: 80px;
+                        text-align: center;
+                        h2{
+                            @include text($fs-main,'SFU-A',$lh-text,$black-cl,uppercase);
+                        }
+                        p{
+                            @include text($fs-p,'SFU-R',$lh-small,$black-cl,none);
+
+                        }
+                    }
+                    &__card{
+                        &-list{
+                            .card__item{
+                                --fs-20:20px;
+                                --fs-35:35px;
+                                padding: 0 15px;
+                                &-detail{
+                                    border: 1px solid #888888;
+                                    max-height: 544px;
+                                    .img{
+                                        overflow: hidden;
+                                        max-width: 100%;
+                                        max-height: 319px;
+                                        img{
+                                            width: 100%;
+                                            transition: transform .5s;
+                                        }
+                                        &:hover{
+                                            img{
+                                                transform: scale(1.2);
+                                                transition: transform .5s;
+                                            }
+                                        }
+                                    }
+                                    .title{
+                                        text-align: center;
+                                        margin: 5px 0 50px 0;
+                                        padding: 0 10px;
+                                        h6{
+                                            @include text(var(--fs-20),'SFU-A',$lh-text,$black-cl,uppercase);
+                                            font-weight: bold;
+                                        }
+                                        h3{
+                                            @include text(var(--fs-35),'SFU-A',$lh-text,$black-cl,uppercase);
+                                        }
+                                        p{
+                                            @include text($fs-small,'SFU-R',$lh-text,$black-cl,none);
+                                            overflow: hidden;
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 2;
+                                            -webkit-box-orient: vertical;
+                                        }
+                                        
+                                    }
+                                    .t-s{
+                                        margin: 5px 0 30px 0;
+                                    }
+                                    .btn_detail{
+                                        display: inline-block;
+                                        left: 50%;
+                                        transform: translateX(-50%);
+                                        position: relative;
+                                        margin-bottom: 30px;
+                                        a{
+                                            @include text($fs-small,'SFU-R',$lh-text,$black-cl,none);
+                                            position: relative;
+                                            &:after{
+                                                content: "";
+                                                width: 100%;
+                                                height: 1px;
+                                                background-color: $black-cl;
+                                                display: block;
+                                                position: absolute;
+                                                bottom: -3px;
+                                                left: 0;
+                                                right: 0;
+                                                margin: auto;
+                                                transition: width .3s;
+
+                                            } 
+                                        }
+                                        &:hover{
+                                            a{
+                                                &::after{
+                                                    width: 0%;
+                                                    transition: width .3s;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &__viewmore{
+                        margin-top: 60px;
+                        @include midflex();
+                        .btn-detail{
+                            a{
+                                padding: 15px 60px;
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .sec-5{
+            background-image: url('./../img/item/home/background-2.jpg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            object-fit: cover;
+            .container{
+                .network{
+                    padding: 50px 0 80px 0;
+                    @include midflex();
+                    
+                    &__caption{
+                        @include midflex();
+                        flex-direction: column;
+                        h2{
+                            @include text($fs-main,'SFU-A',$lh-text,$black-cl,uppercase);
+                            letter-spacing: 2px;
+                        }
+                        p{
+                            @include text($fs-p,'SFU-R',$lh-small,$black-cl,none);
+                        }
+                        .line{
+                            padding: 180px 0;
+                        }
+                        .btn-detail{
+                            a{
+                                padding: 15px 60px;
+                                font-size: 25px;
+                            }
+                        }
+                        
+                    }
+
+                }
+            }
+        }
+    }
+    
+    @include desktop{
+        .banner{
+            height: 100%;
+            .slide{
+                &__list{
+                    &-item{
+                        .img__main{
+                            .img_moto{
+                                max-width: 647px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include tablet{
+        .banner{
+            height: 100%;
+            .slide{
+                &__list{
+                    &-item{
+                        .img__main{
+                            .img_moto{
+                                max-width: 560px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include mobile{
+        .banner{
+            height: 100%;
+            .slide{
+                &__list{
+                    &-item{
+                        .img__main{                     
+                            .img_moto{
+                                max-width: 400px;
+                            }
+                        }
+                        .item__bottom{
+                            &-container{
+                                .count{
+                                    position: relative;
+                                    bottom: -20px;
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+            }
+        }
+        .wrapper{
+            .sec-1, .product-hot, .sec-3, .sec-4, .sec-5{
+                margin: 50px 0;
+                .container{
+                    padding:0 5px;
+                    .sec1, .news, .network, .productHot{
+                        &__caption{
+                            position: relative;
+                            top: 0;
+                            transform: translateY(0);
+                            margin-bottom: 20px;
+                            h2{
+                                font-size: $fs-main-res;
+                            }
+                            p{
+                                font-size: $fs-small-res;
+                            }
+                            &-des{
+                                h2{
+                                    font-size: $fs-main-res;
+                                }
+                                p{
+                                    font-size: $fs-small-res;
+                                }
+                            }
+                        }
+                        &__list{
+                        margin-bottom: 0;
+
+                        }
+                        .btnSlide{
+                            bottom: 3px;
+                        }
+                    }
+                    .sec3{
+                        &__caption{
+                            margin: 0 0 200px 0;
+                            h2{
+                                font-size: $fs-main-res;
+                            }
+                            p{
+                                font-size: $fs-small-res;
+                            }
+                        }
+                    }
+                    .news{
+                        &__card{
+                            &-list{
+                                .card__item{
+                                    margin-bottom: 20px;
+                                }
+                            }
+                        }
+                        &__viewmore{
+                            margin-top: 20px;
+                            .btn-detail{
+                                a{
+                                    font-size: 15px;
+                                    padding: 7px 30px;
+                                }
+                            }
+                        }
+                    }
+                    .network{
+                        &__caption{
+                            .line{
+                                padding: 100px 0;
+                            }
+                            .btn-detail{
+                                a{
+                                    font-size: 15px;
+                                    padding: 7px 30px;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            .sec-5{
+                margin: 50px 0 0 0;
+            }
+            .product-hot{
+                .container{
+                    .productHot__list{
+                        &-item{
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width:600px) {
+        .banner{
+            height: 100%;
+            .slide{
+                &__list{
+                    &-item{
+                        .caption__main{
+                            z-index: 30;
+                            left: 5%;
+                            .title{
+                                h1{
+                                    font-size: calc(3vw + 5vh);
+                                }
+                                h3{
+                                    margin-top: 20px;
+                                    font-size: 24px;
+                                }
+                            }
+                        }
+                        .img__main{
+                            .img-slide{
+                                height: 300px;
+                            }
+                            .img_moto{
+                                max-width: 250px;
+                               
+                               
+                                //bottom: 100px;
+                            }
+                        }
+                        .item__bottom{
+                            bottom: 0;
+                            &-container{
+                                justify-content: flex-end;
+                                .scrolldown{
+                                    display: none;
+                                }
+                                .count{
+                                    float: right;
+                                    &__active, .g{
+                                        font-size: 36px;
+                                    }
+                                    &__default{
+                                        font-size: 22px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.loader-page{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: $white-cl;
+    top: 0;
+    left: 0;
+    @include midflex();
+    z-index: 10000;
+}

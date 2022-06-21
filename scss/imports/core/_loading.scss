@@ -1,0 +1,50 @@
+.loadPage{
+    width: 100%;
+    height: 100vh;
+    background: $white-cl;
+    z-index:1001;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: height .6s;
+
+    .box{
+        @include mid();
+        .word{
+            position: relative;
+            &-text{
+                display: inline-block;
+                @include text(8vw,'SFU-A',auto,$black-cl,uppercase);
+                font-weight: bold;
+                letter-spacing: 3px;
+                position: relative;
+                -webkit-text-fill-color: transparent;
+                -webkit-text-stroke-color: $black-cl;
+                -webkit-text-stroke-width: .2px;
+                animation: rotate 3s forwards;
+            }
+            @keyframes rotate {
+                0%{
+                    transform: rotate3d(1, 1, 1, 240deg);
+                    opacity: 0;
+                    font-size: 2vw;
+                }
+                50%{
+                    transform: rotate3d(1, 1, 1, 0deg);
+                    opacity: 1;
+                    font-size: 5vw;
+                }
+                100%{
+                    transform: translateY(-600px);
+                    opacity: 0;
+                    font-size: 0vw;
+                }
+            }
+        }
+    }
+}
+
+.hide{
+    height: 0;
+    transition: height .6s;
+}

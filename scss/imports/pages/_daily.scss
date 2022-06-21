@@ -1,0 +1,294 @@
+.agencypage{
+    .banner{
+        position: relative;
+        &__img{
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &__caption{
+            @include mid();
+            &-des{
+                text-align: center;
+                h1{
+                    @include text(70px,'SFU-A',auto,$white-cl,uppercase);
+                }
+                h6{
+                    @include text(25px,'SFU-R',auto,$white-cl,none);
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    .wrapper{
+        margin: 100px 0;
+        .location{
+            margin-bottom: 80px;
+            &__caption{
+                text-align: center;
+                h2{
+                    @include text(40px,'SFU-A',auto,$black-cl,uppercase);
+                }
+            }
+            .line{
+                content: "";
+                width: 100%;
+                height: 2px;
+                background-color: #888888;
+                display: block;
+                margin-top: 30px;
+            }
+        }
+        .box__map{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            &-left{
+                width: 30%;
+                .header{
+                    background: $red-cl;
+                    .box-pad{
+                        padding: 10px;
+
+                    }
+                    &__tabTitle{
+                        @include midflex();
+                        h3{
+                            a{
+                                @include text(35px,'SFU-A',auto,$white-cl,uppercase);
+                            }
+                            opacity: .6;
+                        }
+                        .active{
+                            opacity: 1;
+                        }
+                        span{
+                            content: "";
+                            width: 2px;
+                            height: 30px;
+                            margin: 0 10px;
+                            background-color: $white-cl;
+                            display: inline-block;
+                        }
+                    }
+                    .line-white{
+                        content: "";
+                        width: 100%;
+                        height: 2px;
+                        background-color: $white-cl;
+                        display: block;
+                        margin: 10px 0;
+                    }
+                    &__select{
+                        ul{
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            li{
+                                margin: 0 10px;
+                                padding: 5px;
+                                cursor: pointer;
+                                @include midflex();
+                                justify-content: space-between;
+                                p{
+                                    @include text(18px,'SFU-R',auto,$white-cl,none);
+                                    
+                                }
+                                opacity: .9;
+                                img{
+                                    padding: 0 10px;
+                                    position: relative;
+                                    bottom: -3px;
+                                    transition: transform .4s;
+
+                                }
+                                .img__active{
+                                    transform: rotate(-180deg);
+                                    transition: transform .4s;
+                                }
+                            }
+                            .list__city, .list__district{
+                                
+                                position: absolute;
+                                top: 32px;
+                                @include midflex();
+                                flex-direction: column;
+                                background: $white-cl;
+                                z-index: 5;
+                                width: 200px;
+                                //height: 200px;
+                                border-left: 1px solid #888888;
+                                border-right: 1px solid #888888;
+                                display: none;
+                                li{
+                                    width: 100%;
+                                    padding: 5px 10px;
+                                    border-bottom:1px solid $black-cl;
+                                    a{
+                                        padding-bottom: 5px;
+                                        @include text(18px,'SFU-R',auto,#888888,none);
+                                    }
+                                    &:hover{
+                                        background: #888888;
+                                        transition: background .3s;
+
+                                        a{
+                                            color: $white-cl;
+                                            transition: color .3s;
+                                        }
+                                    }
+                                }
+                            }
+                            .list__city{
+                                left: 0;
+                            }
+                            .list__district{
+                                right: 0;
+                            }
+                            .active{
+                                display: flex;
+                            }
+                        }
+                    }
+                }
+                .body{
+                    .list-contact{
+                        --fs-title:30px;
+                        --fs-small:18px;
+                        overflow-y: scroll;
+                        height: 560px;
+                        .item{
+                            padding: 10px;
+                            .title{
+                                a{
+                                    @include text(var(--fs-title),'SFU-A',auto,$black-cl,none);
+                                }
+                            }
+                            .info{
+                                margin-top: 20px;
+                                a{
+                                    @include midflex();
+                                    justify-content: flex-start;
+                                    margin: 10px 0;
+                                    p{
+                                        @include text(var(--fs-small),'SFU-R',auto,$black-cl,none);
+
+                                    }
+                                    img{
+                                        margin-right: 10px;
+                                    }
+                                }
+                            border-bottom: 2px solid $black-cl;
+
+                            }
+                        }
+                        &::-webkit-scrollbar {
+                            width: 5px;         
+                          }
+                          
+                        &::-webkit-scrollbar-track {
+                            background:#888888;        
+                          }
+                          
+                        &::-webkit-scrollbar-thumb {
+                            background-color: $red-cl;   
+                            border-radius: 30px;     
+                            border: none;
+                            width: 12px;
+                            position: absolute;
+                          }
+                    }
+                }
+            }
+            &-right{
+                width: 70%;
+                overflow: hidden;
+                height: 665px;
+                
+                .frame-map{
+                    width: 100%;
+                     height: 655px;
+                    iframe{
+                        width: 100%;
+                        height: 655px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include tablet{
+    .agencypage{
+        .wrapper{
+            .box__map{
+                &-left{
+                    .header{
+                        &__tabTitle{
+                            h3{
+                                a{
+                                    font-size: $fs-main-res;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mobile{
+    .agencypage{
+        .banner{
+            &__caption{
+                top: 140%;
+                &-des{
+                    h1{
+                        font-size: $fs-main-res;
+                        color: $black-cl;
+                    }
+                    h6{
+                        font-size: $fs-small-res;
+                        color: $black-cl;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+        .wrapper{
+            .location{
+                &__caption{
+                    h2{
+                        font-size: $fs-main-res;
+                    }
+                }
+            }
+            .box__map{
+                flex-direction: column-reverse;
+                &-left{
+                    margin-top: 40px;
+                    width: 90%;
+                    .header{
+                        &__tabTitle{
+                            h3{
+                                a{
+                                font-size: $fs-main-res;
+
+                                }
+                            }
+                        }
+                    }
+                }
+                &-right{
+                    width: 90%;
+                    height: 300px;
+                }
+            }
+        }
+    }
+}
